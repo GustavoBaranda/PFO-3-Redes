@@ -58,13 +58,13 @@ Proyecto/
 - Para agregar dependencias, edita `requirements.txt` y vuelve a crear el venv o instala en el venv existente.
 
 ## Autor
-BARANDA CABREA, Gustavo Daniel
+BARANDA CABRERA, Gustavo Daniel
 
 Repositorio: [PFO-3-Redes](https://github.com/GustavoBaranda/PFO-3-Redes)
 
 ## Diagrama de arquitectura de la consigna Nro. 1
 
-![Diagrama de arquitectura](./diagram.png)
+![Diagrama de arquitectura](./diagrama.png)
 
 
 

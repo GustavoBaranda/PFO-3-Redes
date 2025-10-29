@@ -1,0 +1,38 @@
+@startuml
+title Arquitectura distribuida (Cliente-Servidor) - PFO 3
+
+actor "Cliente movil" as MobileClient
+actor "Cliente web" as WebClient
+
+rectangle "Balanceador\n(Nginx / HAProxy)\n[HA]" as LB
+
+cloud "Workers (x3)\nPool de hilos" as Workers
+database "PostgreSQL\n(Cluster / Replicas)" as Postgres
+rectangle "Cola de mensajes\n(RabbitMQ)\n(Asincrona)" as MQ
+rectangle "Almacenamiento de objetos\n(S3)" as S3
+
+MobileClient --> LB : solicitudes HTTP / TCP
+WebClient --> LB : solicitudes HTTP / TCP
+LB --> Workers : distribuir conexiones / enrutar
+Workers -[#0000FF]> MQ : publicar tareas <<async>>
+Workers --> Postgres : lecturas / escrituras
+Workers --> S3 : almacenar / recuperar objetos
+
+note right of Workers
+		Cada servidor worker tiene:
+		- Pool de hilos para ejecutar tareas
+		- Conexion a RabbitMQ para coordinar trabajos
+end note
+
+note left of Postgres
+	Postgres en cluster para HA y replicacion
+end note
+
+note bottom
+	Leyenda:
+	- Flechas azules (->) indican comunicacion asincrona (colas)
+	- Texto entre [] indica despliegue o rol
+end note
+
+@enduml
+

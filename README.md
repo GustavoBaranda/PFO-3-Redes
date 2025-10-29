@@ -60,9 +60,11 @@ Proyecto/
 ## Autor
 BARANDA CABREA, Gustavo Daniel
 
+Repositorio: https://github.com/GustavoBaranda/PFO-3-Redes
+
 ## Diagrama de arquitectura de la consigna Nro. 1
 
-![Diagrama de arquitectura](Diagrama/diagram.png)
+![Diagrama de arquitectura](diagram.png)
 
 
 

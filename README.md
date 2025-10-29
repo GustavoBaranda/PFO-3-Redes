@@ -15,7 +15,7 @@ y lanza un cliente interactivo en la terminal. El script principal de inicio es
 - Git Bash o cualquier shell compatible con bash en Windows (recomendado para ejecutar `iniciar_todo.sh`).
 
 ## Cómo ejecutar (desde tu directorio actual)
-Estas opciones preservan tu directorio de trabajo, no entrar a la carpeta Proyecto (el script hace `cd` internamente): 
+Estas opciones preservan tu directorio de trabajo. No es necesario entrar en la carpeta `Proyecto`; el script se ejecuta desde aquí (hace `cd` internamente):
 
 Usando `bash` (recomendado):
 ```bash
